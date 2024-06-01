@@ -18,7 +18,7 @@ for config in configs:
     build: .
     ports:
       - "{config['port']}:8545"
-    command: ganache-cli --networkId {config['networkId']} --host 0.0.0.0 --port 8545
+    command: ganache --chain.chainId {config['networkId']} --chain.networkId {config['networkId']} --host 0.0.0.0 --port 8545
 """
     docker_compose_content += service_content
 
