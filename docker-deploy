@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Build the Docker image
+sudo docker build -t ganache-image .
+
+# Generate the docker-compose.yml file
+python3 generate_docker_compose.py
+
+# Run docker-compose up in detached mode
+sudo docker-compose up -d
+
+echo "Docker containers are running in detached mode."
