@@ -1,0 +1,12 @@
+[
+  {
+    "name": "ganache1",
+    "networkId": 1234,
+    "port": 8545
+  },
+  {
+    "name": "ganache2",
+    "networkId": 5678,
+    "port": 8546
+  }
+]
