@@ -7,10 +7,10 @@ services:
     build: .
     ports:
       - "8545:8545"
-    command: ganache-cli --networkId 1234 --port 8545
+    command: ganache-cli --networkId 1234 --host 0.0.0.0 --port 8545
 
   ganache2:
     build: .
     ports:
       - "8546:8545"
-    command: ganache-cli --networkId 5678 --port 8545
+    command: ganache-cli --networkId 5678 --host 0.0.0.0 --port 8545
