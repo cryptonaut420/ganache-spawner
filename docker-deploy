@@ -1,5 +1,23 @@
 #!/bin/bash
 
+# Function to stop and remove all running Ganache Docker containers
+stop_ganache_containers() {
+    # Get all running container IDs with the image name "ganache-image"
+    container_ids=$(sudo docker ps -q --filter "ancestor=ganache-image")
+
+    if [ -n "$container_ids" ]; then
+        echo "Stopping and removing current Ganache Docker containers..."
+        # Stop and remove the containers
+        sudo docker stop $container_ids
+        sudo docker rm $container_ids
+    else
+        echo "No running Ganache Docker containers found."
+    fi
+}
+
+# Stop any currently running Ganache Docker containers
+stop_ganache_containers
+
 # Build the Docker image
 sudo docker build -t ganache-image .
 
